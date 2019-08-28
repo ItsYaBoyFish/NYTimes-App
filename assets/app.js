@@ -1,11 +1,11 @@
 const API_KEY = 'kJOiAvWAUX8EQeuLZVl9PP1vXBYxhkIw'
 
-let searchTerm = $('#searchTerm');
+var searchTerm = $('#searchTerm');
 let numbersToRetrive = $('#recordsToRetrieve');
 let startYear = $('#startYear');
 let endYear = $('#endYear');
 
-const queryURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchTerm}&api-key=${API_KEY}`;
+let queryURL = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=Obama&api-key=kJOiAvWAUX8EQeuLZVl9PP1vXBYxhkIw`;
 
 function clearTheInputs() {
   searchTerm = '';
@@ -16,22 +16,22 @@ function clearTheInputs() {
 
 function searchForResults() {
 // Testing for Inputs
-  console.log(searchTerm);
-  console.log(numbersToRetrive);
-  console.log(startYear);
-  console.log(endYear);
+  console.log(searchTerm.val());
+  console.log(numbersToRetrive.val());
+  console.log(startYear.val());
+  console.log(endYear.val());
 // ------------------------
-// Ajax parameters for api call.
+// ajax parameters for api call.
   let options = {
     url: queryURL,
     method: 'GET'
-  }
+  } 
 
  // Actual Ajax call 
   $.ajax(options).then(function(response){
     console.log(response);
   });
-}
+};
 
 
 
